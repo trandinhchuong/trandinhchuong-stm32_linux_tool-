@@ -14,3 +14,5 @@ tools
   sudo udevadm control --reload
 ## using comment
 # st-flash write file.bin 0x08000000
+
+##clock config
