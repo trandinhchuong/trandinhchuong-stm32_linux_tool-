@@ -16,3 +16,4 @@ tools
 # st-flash write file.bin 0x08000000
 
 ##clock config
+https://stm32f4-discovery.net/2015/01/properly-set-clock-speed-stm32f4xx-devices/
