@@ -20,3 +20,5 @@ https://stm32f4-discovery.net/2015/01/properly-set-clock-speed-stm32f4xx-devices
 
 ## install openocd
 https://hackaday.io/page/4991-compiling-openocd-from-source-on-ubuntu-1604
+## debug
+https://www.bartslinger.com/cx-10-quadcopter/debugging-stm32-from-qtcreator/
