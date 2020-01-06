@@ -12,9 +12,12 @@ tools
   sudo cp etc/udev/rules.d/49-stlinkv* /etc/udev/rules.d/
 # and restart udev
   sudo udevadm control --reload
-## using comment
+## using commentg
 # st-flash write file.bin 0x08000000
+## arm eabi
 
+sudo apt-get update 
+sudo apt-get install gcc-arm-none-eabi
 ##clock config
 https://stm32f4-discovery.net/2015/01/properly-set-clock-speed-stm32f4xx-devices/
 
