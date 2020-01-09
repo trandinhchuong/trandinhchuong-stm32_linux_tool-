@@ -1,0 +1,35 @@
+char Rx_data[50];
+
+void USART1_IRQHandler(void)
+{
+    /* USER CODE BEGIN USART1_IRQn 0 */
+    int isRx=0;
+	
+    if (USART1->ISR & UART_IT_RXNE) {
+        isRx=1;
+    }
+    /* USER CODE END USART1_IRQn 0 */
+    HAL_UART_IRQHandler(&huart1);
+    /* USER CODE BEGIN USART1_IRQn 1 */
+    if(isRx) {
+        uint8_t rbyte = huart1.Instance->RDR;
+        __HAL_UART_SEND_REQ(&huart1, UART_RXDATA_FLUSH_REQUEST);
+        Rx_data[pointer]=rbyte;
+        if(Rx_data[pointer]=='$') {
+            Rx_data[pointer]='\0';
+            pointer=0;
+           // copyValuesToBuff();
+          //  clearBuffer(&Rx_data,32);
+        } else {
+            pointer++;
+            printf("Rx_data:%d",rbyte);
+            if(pointer>=32) {
+                pointer=0;
+            }
+        }
+        __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
+
+
+    }
+
+}
